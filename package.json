@@ -5,3 +5,12 @@
     "resend": "^3.0.0"
   }
 }
+{
+  "name": "personal-reminder",
+  "version": "1.0.0",
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
