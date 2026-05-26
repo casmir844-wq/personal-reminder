@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Bell, Flame, Plus } from 'lucide-react';
 
 const reminders = [
@@ -21,12 +20,10 @@ export default function Home() {
     <main className="min-h-screen px-4 py-6 pb-32">
 
       {/* HEADER */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="glass rounded-3xl p-5 mb-6"
-      >
+      <div className="glass rounded-3xl p-5 mb-6">
+
         <div className="flex justify-between items-center">
+
           <div>
             <h1 className="text-2xl font-bold">
               Good Evening James 👋
@@ -40,18 +37,16 @@ export default function Home() {
           <div className="glass p-3 rounded-2xl">
             <Bell size={22} />
           </div>
+
         </div>
-      </motion.div>
+      </div>
 
 
       {/* STREAK CARD */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="glass rounded-3xl p-5 mb-6 glow"
-      >
+      <div className="glass rounded-3xl p-5 mb-6 glow">
+
         <div className="flex items-center gap-3">
+
           <div className="bg-orange-500/20 p-3 rounded-2xl">
             <Flame className="text-orange-400" />
           </div>
@@ -62,33 +57,30 @@ export default function Home() {
             </h2>
 
             <p className="text-white/70 text-sm">
-              Complete today’s missions to continue.
+              Complete today’s missions.
             </p>
           </div>
+
         </div>
-      </motion.div>
-
-
-      {/* SECTION TITLE */}
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-bold">
-          Incoming Productivity Mail 📬
-        </h2>
       </div>
 
 
-      {/* REMINDER CARDS */}
+      {/* SECTION TITLE */}
+      <h2 className="text-xl font-bold mb-4">
+        Incoming Productivity Mail 📬
+      </h2>
+
+
+      {/* REMINDERS */}
       <div className="space-y-4">
 
         {reminders.map((item, index) => (
-          <motion.div
+
+          <div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.15 }}
-            whileTap={{ scale: 0.97 }}
             className="glass rounded-3xl p-5"
           >
+
             <div className="flex justify-between items-start">
 
               <div>
@@ -104,24 +96,28 @@ export default function Home() {
               <div className="bg-cyan-400/20 text-cyan-300 px-3 py-1 rounded-full text-sm">
                 {item.xp}
               </div>
+
             </div>
-          </motion.div>
+
+          </div>
+
         ))}
+
       </div>
 
 
       {/* FLOATING BUTTON */}
-      <motion.button
-        whileTap={{ scale: 0.9 }}
+      <button
         className="fixed bottom-24 right-6 w-16 h-16 rounded-full glass glow flex items-center justify-center"
       >
         <Plus size={30} />
-      </motion.button>
+      </button>
 
 
-      {/* BOTTOM NAVIGATION */}
+      {/* BOTTOM NAV */}
       <div className="fixed bottom-0 left-0 w-full px-4 pb-6">
-        <div className="glass rounded-3xl p-4 flex justify-around items-center">
+
+        <div className="glass rounded-3xl p-4 flex justify-around">
 
           <button className="text-cyan-300 font-semibold">
             Home
@@ -144,4 +140,4 @@ export default function Home() {
 
     </main>
   );
-          }
+    }
