@@ -3,7 +3,8 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
-  const { email, name } = req.body;
+  const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+const { email, name } = body;
   
   const { data, error } = await resend.emails.send({
     from: 'onboarding@resend.dev',
