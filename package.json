@@ -1,6 +1,1 @@
-{
-  "name": "my-app",
-  "dependencies": {
-    "resend": "^3.0.0"   // Just add this line
-  }
-}
+
