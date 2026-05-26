@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+    <h2>Send me a message</h2>
+    <form id="contactForm">
+        <input type="email" id="email" placeholder="Your email" required>
+        <input type="text" id="name" placeholder="Your name" required>
+        <textarea id="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById('contactForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    email: document.getElementById('email').value,
+                    name: document.getElementById('name').value,
+                    message: document.getElementById('message').value
+                })
+            });
+            const result = await response.json();
+            document.getElementById('result').innerHTML = 
+                result.success ? '✅ Email sent!' : '❌ Error: ' + result.error;
+        };
+    </script>
+</body>
+</html>
