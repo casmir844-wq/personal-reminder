@@ -16,3 +16,6 @@ const { email, name } = body;
   if (error) return res.status(400).json({ error });
   res.status(200).json({ success: true });
                         }
+if (!email || !name) {
+  return res.status(400).json({ error: 'Missing fields' });
+}
