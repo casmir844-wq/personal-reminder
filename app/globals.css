@@ -1,43 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --bg-dark: #0f172a;
-  --bg-secondary: #111827;
-  --glass: rgba(255,255,255,0.08);
-  --glass-border: rgba(255,255,255,0.12);
-  --text: #ffffff;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background:
-    radial-gradient(circle at top left, rgba(56,189,248,0.15), transparent 25%),
-    radial-gradient(circle at bottom right, rgba(168,85,247,0.15), transparent 25%),
-    linear-gradient(to bottom, var(--bg-dark), var(--bg-secondary));
-
-  color: var(--text);
-  min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #0f172a);
+  color: white;
 }
 
 .glass {
-  background: var(--glass);
+  background: rgba(255,255,255,0.08);
   backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-
-  box-shadow:
-    0 8px 32px rgba(0,0,0,0.25),
-    inset 0 1px 0 rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
 
-.glow {
-  box-shadow: 0 0 20px rgba(56,189,248,0.3);
+button {
+  cursor: pointer;
 }
